@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday My Love</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(270deg,#4800ff,#00eeff,#ff00b7,#eeff00,#ff0000,#0dff00,#f700ff,#1500ff,#ff002b);
+    background-size:800% 800%;
+    animation:bgmove 12s infinite alternate;
+    text-align:center;
+    color:white;
+}
+@keyframes bgmove{
+    0%{background-position:0% 50%;}
+    100%{background-position:100% 50%;}
+}
+.heart{
+position:fixed;
+bottom:-20px;
+color:red;
+animation:float 8s linear infinite;
+}
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-100vh);}
+}
+h1{
+    font-size:50px;
+    animation:fadeIn 3s ease-in-out;
+}
+/* title glow */
+h1{
+font-size:48px;
+color:#ffffff;
+animation:glow 2s infinite alternate;
+}
+@keyframes glow{
+from{text-shadow:0 0 10px #ff4d6d;}
+to{text-shadow:0 0 25px #ff99ac;}
+}
+
+.content{
+    font-size:22px;
+    padding:20px;
+    animation:slideUp 2s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes slideUp{
+    from{transform:translateY(50px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+}
+
+
+.typing{
+font-size:24px;
+border-right:3px solid red;
+display:inline-block;
+padding:20px;
+}
+.gallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.gallery img{
+width:320px;
+height:320px;
+border-radius:15px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.gallery img:hover{
+transform:scale(1.1);
+box-shadow:0 0 30px red;
+}
+
+button{
+padding:14px 28px;
+font-size:20px;
+color:rgb(0, 0, 0);
+background:linear-gradient(45deg,#0011ff,#029a20,#00c8ff,#e1ff00,#fc0230);
+border:none;
+border-radius:30px;
+cursor:pointer;
+position:relative;
+animation:glow 2s infinite alternate;
+transition:0.4s;
+}
+
+/* glowing animation */
+@keyframes glow{
+0%{
+box-shadow:0 0 10px #ff004c,0 0 20px #ff4d6d;
+}
+100%{
+box-shadow:0 0 25px #ff4d6d,0 0 50px #ff85a1;
+}
+}
+
+/* hover animation */
+button:hover{
+transform:scale(1.1);
+letter-spacing:2px;
+}
+
+/* click animation */
+button:active{
+transform:scale(0.95);
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>❤️ Happy Birthday My Love ❤️🤴🏻</h1>
+<div class="gallery">
+<img src="je.png" alt="style" width="700px">
+</div>
+<div id="text" class="typing"></div>
+
+
+<br><br>
+
+<a href="memories.html">
+<button><b>Next →</b></button>
+</a>
+
+
+<script>
+let msg="Happy Birthday my love ❤️ Even if we are far apart right now, my wishes will always find you. You are someone I will always care for deeply, someone who changed my heart in ways I can never forget. I hope your day is filled with love, laughter, and moments that make you truly happy...";
+let i=0;
+function type(){
+if(i<msg.length){
+document.getElementById("text").innerHTML+=msg.charAt(i);
+i++;
+setTimeout(type,50);
+}}
+type();
+</script>
+<script>
+/* Floating hearts generator */
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(20+Math.random()*30)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),8000);
+},500);
+</script>
+
+</body>
+</html>

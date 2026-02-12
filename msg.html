@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Msg</title>
+    
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(270deg,#4800ff,#00eeff,#ff00b7,#eeff00,#ff0000,#0dff00,#f700ff,#1500ff,#ff002b);
+    background-size:800% 800%;
+    animation:bgmove 12s infinite alternate;
+    text-align:center;
+    color:white;
+}
+@keyframes bgmove{
+    0%{background-position:0% 50%;}
+    100%{background-position:100% 50%;}
+}
+    .heart{
+position:fixed;
+bottom:-20px;
+color:red;
+animation:float 8s linear infinite;
+}
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-100vh);}
+}
+   h1{
+    font-size:50px;
+    animation:fadeIn 3s ease-in-out;
+}
+/* title glow */
+h1{
+font-size:48px;
+color:#ff4d6d;
+animation:glow 2s infinite alternate;
+}
+@keyframes glow{
+from{text-shadow:0 0 10px #ff4d6d;}
+to{text-shadow:0 0 25px #ff99ac;}
+}
+.content{
+    font-size:22px;
+    padding:20px;
+    animation:slideUp 2s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes slideUp{
+    from{transform:translateY(50px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+}
+/* Love letter popup */
+.popup{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#ffffff;
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 20px red;
+color: #ff0000;
+}
+
+.footer{
+    margin-top:30px;
+    font-size:20px;
+    animation:blink 2s infinite;
+}
+
+@keyframes blink{
+    0%,100%{opacity:1;}
+    50%{opacity:0.5;}
+}
+
+
+button{
+padding:14px 28px;
+font-size:20px;
+color:rgb(0, 0, 0);
+background:linear-gradient(45deg,#0011ff,#029a20,#00c8ff,#e1ff00,#fc0230);
+border:none;
+border-radius:30px;
+cursor:pointer;
+position:relative;
+animation:glow 2s infinite alternate;
+transition:0.4s;
+}
+
+/* popup letter */
+.popup{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#ffffff;
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 20px red;
+color: #ff0000;
+}
+/* glowing animation */
+@keyframes glow{
+0%{
+box-shadow:0 0 10px #ff004c,0 0 20px #ff4d6d;
+}
+100%{
+box-shadow:0 0 25px #ff4d6d,0 0 50px #ff85a1;
+}
+}
+
+/* hover animation */
+button:hover{
+transform:scale(1.1);
+letter-spacing:2px;
+}
+
+/* click animation */
+button:active{
+transform:scale(0.95);
+}
+</style>
+</head>
+<body>
+    <h1>💌 Love Letter</h1>
+<button onclick="document.getElementById('letter').style.display='block'">
+Open My Heart 
+</button>
+
+<div id="letter" class="popup">
+<p>
+Happy birthday da... Even though we haven’t spoken for months and there’s so much silence between us, my heart still remembers every little thing about you. Being far away from you is already hard, but being far without your voice feels even heavier. Distance and problems may have come between us, but the love I carry for you hasn’t faded even a little. I still find myself wishing you were here, still hoping one day we will talk again like nothing broke us. No matter where life takes us, a part of me will always hold you close with the same love, the same care, and the same memories that made me smile once.
+Nee ena evlo hurt panalum paravala... Enaku nee tha venum... I am still waiting for you with the same love ❤️🫂
+<br><br>
+<b>Unodu iruntha antha alagiya natkal thirumbi enaku kidaikuma...🥺🫴🏻 <b>
+</p>
+<button onclick="document.getElementById('letter').style.display='none'">Close</button>
+</div>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+
+<a href="heart.html">
+<button><b>Special Heart</b></button>
+</a>
+
+<script>
+/* Floating hearts generator */
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(20+Math.random()*30)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),8000);
+},500);
+</script>
+
+<div class="footer">
+❤️ Forever Yours ❤️
+</div>
+</body>
+</html>
